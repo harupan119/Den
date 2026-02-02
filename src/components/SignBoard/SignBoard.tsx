@@ -24,8 +24,12 @@ function SignBoard() {
     return () => clearInterval(interval)
   }, [])
 
+  const handleClick = () => {
+    window.electronAPI.openUrl('https://calendar.google.com')
+  }
+
   return (
-    <div className="signboard-container">
+    <div className="signboard-container" onClick={handleClick}>
       <img src="/items/board_W.png" alt="Sign Board" className="signboard-image" />
       <div className="signboard-content">
         <div className="signboard-date">{dateStr}</div>

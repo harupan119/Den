@@ -12,7 +12,6 @@ const defaultApps: AppLink[] = [
   { id: 'gemini', name: 'Gemini', icon: '/icons/gemini.svg', type: 'url', path: 'https://gemini.google.com', useImage: true },
   { id: 'claude', name: 'Claude', icon: '/icons/claude.svg', type: 'url', path: 'https://claude.ai', useImage: true },
   { id: 'terminal', name: 'CLI', icon: '💻', type: 'command', path: 'wt.exe' },
-  { id: 'gmail', name: 'Gmail', icon: '/icons/gmail.svg', type: 'url', path: 'https://mail.google.com', useImage: true },
   { id: 'sirius', name: 'Sirius', icon: '🎓', type: 'url', path: 'https://web.sirius.tuat.ac.jp/campusweb/' },
 ]
 

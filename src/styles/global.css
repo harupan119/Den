@@ -265,6 +265,12 @@ body {
   right: -80px;
   width: 540px;
   z-index: 5;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.signboard-container:hover {
+  transform: scale(1.02);
 }
 
 .signboard-image {
@@ -309,6 +315,22 @@ body {
   color: #4a3728;
   text-align: center;
   letter-spacing: -20px;
+}
+
+/* Post Box */
+.post-box {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  height: 350px;
+  width: auto;
+  z-index: 10;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.post-box:hover {
+  transform: scale(1.05);
 }
 
 /* Scrollbar */

@@ -62,6 +62,14 @@ function App() {
           <SignBoard />
         </div>
       </div>
+
+      {/* Post Box */}
+      <img
+        src="/items/post.png"
+        alt="Post Box"
+        className="post-box"
+        onClick={() => window.electronAPI.openUrl('https://mail.google.com')}
+      />
     </div>
   )
 }
