@@ -317,6 +317,22 @@ body {
   letter-spacing: -20px;
 }
 
+/* Obsidian Rock */
+.obsidian-rock {
+  position: absolute;
+  bottom: 150px;
+  right: 200px;
+  height: 150px;
+  width: auto;
+  z-index: 10;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.obsidian-rock:hover {
+  transform: scale(1.05);
+}
+
 /* Post Box */
 .post-box {
   position: absolute;

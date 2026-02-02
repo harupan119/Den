@@ -63,6 +63,14 @@ function App() {
         </div>
       </div>
 
+      {/* Obsidian */}
+      <img
+        src="/items/obsidian.png"
+        alt="Obsidian"
+        className="obsidian-rock"
+        onClick={() => window.electronAPI.openApp('obsidian://daily')}
+      />
+
       {/* Post Box */}
       <img
         src="/items/post.png"
