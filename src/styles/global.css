@@ -1,0 +1,247 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg-primary: #1a1b26;
+  --bg-secondary: #24283b;
+  --bg-tertiary: #414868;
+  --text-primary: #c0caf5;
+  --text-secondary: #a9b1d6;
+  --accent: #7aa2f7;
+  --accent-hover: #89b4fa;
+  --sidebar-width: 80px;
+  --titlebar-height: 32px;
+}
+
+body {
+  font-family: 'Segoe UI', 'Meiryo', sans-serif;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  overflow: hidden;
+  user-select: none;
+}
+
+.app-container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%);
+}
+
+/* Title Bar */
+.title-bar {
+  height: var(--titlebar-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--bg-tertiary);
+}
+
+.title-bar-drag {
+  flex: 1;
+  padding-left: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  -webkit-app-region: drag;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.window-controls {
+  display: flex;
+  height: 100%;
+  -webkit-app-region: no-drag;
+}
+
+.control-btn {
+  width: 46px;
+  height: 100%;
+  border: none;
+  background: transparent;
+  color: var(--text-secondary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.control-btn:hover {
+  background: var(--bg-tertiary);
+}
+
+.control-btn.close:hover {
+  background: #e81123;
+  color: white;
+}
+
+/* Main Content */
+.main-content {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+/* Sidebar */
+.sidebar {
+  width: var(--sidebar-width);
+  background: var(--bg-secondary);
+  border-right: 1px solid var(--bg-tertiary);
+  display: flex;
+  flex-direction: column;
+  padding: 16px 0;
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.app-button {
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 12px;
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  transition: all 0.2s;
+}
+
+.app-button:hover {
+  background: var(--accent);
+  transform: scale(1.05);
+}
+
+.app-button:active {
+  transform: scale(0.95);
+}
+
+.app-icon {
+  font-size: 20px;
+}
+
+.app-name {
+  font-size: 9px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+/* Center Area */
+.center-area {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+
+/* Message Box */
+.message-box {
+  position: relative;
+  background: var(--bg-secondary);
+  border: 2px solid var(--accent);
+  border-radius: 16px;
+  padding: 16px 24px;
+  margin-bottom: 20px;
+  max-width: 400px;
+  box-shadow: 0 4px 20px rgba(122, 162, 247, 0.2);
+}
+
+.message-content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.message-tail {
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 12px solid transparent;
+  border-right: 12px solid transparent;
+  border-top: 12px solid var(--accent);
+}
+
+.message-tail::before {
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 10px solid var(--bg-secondary);
+}
+
+/* Character */
+.character-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.character-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.character-silhouette {
+  opacity: 0.9;
+  filter: drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3));
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+/* Right Area */
+.right-area {
+  width: 250px;
+  padding: 16px;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--bg-tertiary);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
