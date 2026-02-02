@@ -1,6 +1,7 @@
 import Sidebar from './components/Sidebar/Sidebar'
 import Character from './components/Character/Character'
 import MessageBox from './components/MessageBox/MessageBox'
+import SignBoard from './components/SignBoard/SignBoard'
 import { useTimeOfDay, getBackgroundImage } from './hooks/useTimeOfDay'
 
 function App() {
@@ -56,9 +57,9 @@ function App() {
           <Character />
         </div>
 
-        {/* Right Area - Future Calendar Widget */}
+        {/* Right Area */}
         <div className="right-area">
-          {/* Calendar placeholder for future implementation */}
+          <SignBoard />
         </div>
       </div>
     </div>
