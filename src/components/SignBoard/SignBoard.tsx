@@ -10,9 +10,9 @@ function SignBoard() {
 
       const month = now.getMonth() + 1
       const day = now.getDate()
-      const weekdays = ['日', '月', '火', '水', '木', '金', '土']
+      const weekdays = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
       const weekday = weekdays[now.getDay()]
-      setDateStr(`${month}月${day}日 (${weekday})`)
+      setDateStr(`${month}月${day}日\n${weekday}`)
 
       const hours = now.getHours().toString().padStart(2, '0')
       const minutes = now.getMinutes().toString().padStart(2, '0')

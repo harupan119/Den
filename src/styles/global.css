@@ -285,27 +285,30 @@ body {
 
 .signboard-date {
   position: absolute;
-  top: 18%;
+  top: 26%;
   left: 50%;
-  transform: translateX(-50%);
+  transform: translate(-50%, -50%);
   font-family: 'Shirokuma', sans-serif;
-  font-size: 32px;
+  font-size: 26px;
   font-weight: normal;
   color: #4a3728;
   text-align: center;
-  white-space: nowrap;
+  white-space: pre-line;
+  letter-spacing: -2px;
+  line-height: 1.2;
 }
 
 .signboard-time {
   position: absolute;
-  top: 62%;
-  left: 50%;
-  transform: translateX(-50%);
+  top: 74%;
+  left: 48%;
+  transform: translate(-50%, -50%);
   font-family: 'Shirokuma', sans-serif;
-  font-size: 48px;
+  font-size: 43px;
   font-weight: normal;
   color: #4a3728;
   text-align: center;
+  letter-spacing: -20px;
 }
 
 /* Scrollbar */
