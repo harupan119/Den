@@ -5,9 +5,15 @@ import path from 'path'
 let mainWindow: BrowserWindow | null = null
 
 function createWindow() {
+  // Background image size: 2752x1536, aspect ratio ~1.79:1
+  const width = 1376
+  const height = 768
+
   mainWindow = new BrowserWindow({
-    width: 1200,
-    height: 800,
+    width,
+    height,
+    minWidth: 860,
+    minHeight: 480,
     frame: false,
     transparent: false,
     resizable: true,

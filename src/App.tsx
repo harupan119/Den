@@ -1,14 +1,28 @@
 import Sidebar from './components/Sidebar/Sidebar'
 import Character from './components/Character/Character'
 import MessageBox from './components/MessageBox/MessageBox'
+import { useTimeOfDay, getBackgroundImage } from './hooks/useTimeOfDay'
 
 function App() {
+  const timeOfDay = useTimeOfDay()
+  const backgroundImage = getBackgroundImage(timeOfDay)
+
   const handleMinimize = () => window.electronAPI.windowMinimize()
   const handleMaximize = () => window.electronAPI.windowMaximize()
   const handleClose = () => window.electronAPI.windowClose()
 
+  const greetings: Record<string, string> = {
+    morning: 'おはよう！今日も一日頑張ろうね！',
+    noon: 'お昼だね！ちゃんとご飯食べた？',
+    evening: 'お疲れ様！今日はどんな一日だった？',
+    night: 'もう夜だね。あんまり夜更かししないでね！',
+  }
+
   return (
-    <div className="app-container">
+    <div
+      className="app-container"
+      style={{ backgroundImage: `url(${backgroundImage})` }}
+    >
       {/* Title Bar */}
       <div className="title-bar">
         <div className="title-bar-drag">Den</div>
@@ -38,7 +52,7 @@ function App() {
 
         {/* Center Area - Character */}
         <div className="center-area">
-          <MessageBox message="おはよう！今日も一日頑張ろうね！" />
+          <MessageBox message={greetings[timeOfDay]} />
           <Character />
         </div>
 
