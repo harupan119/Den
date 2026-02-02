@@ -222,6 +222,7 @@ body {
   justify-content: center;
   margin-top: 60px;
   margin-left: 120px;
+  cursor: pointer;
 }
 
 .character-placeholder {
